@@ -1,0 +1,6 @@
+1. replace app/scripts/app.js with app.js
+2. replace app/index.html with index.html
+3. delete the content in controllers
+4. delete the content in views/
+
+
