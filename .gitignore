@@ -4,3 +4,10 @@ dist
 .sass-cache
 .swp
 bower_components
+.idea
+.ipr
+.ipw
+.eclipse
+.project
+.netbeans
+
