@@ -398,6 +398,10 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: true
+      },
+      ci: {
+        configFile: 'test/karma.conf.js',
+        singleRun: false
       }
     }
   });
