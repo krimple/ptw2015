@@ -1,15 +1,13 @@
-var WebSocketServer = require('ws').Server,
-    wss = new WebSocketServer({ port: 4000 });
+var WebSocketServer = require('ws').Server;
+
+var wss = new WebSocketServer({ port: 4000 });
 
 wss.on('connection', function(ws) {
-    ws.on('message', function(message) {
-        console.log('message ', message);
-        connection.send('you sent: ' + message);
+    console.log('it\'s alive!');
+    ws.on('message', function(msg) {
+        console.log('received', msg);
+        ws.send('you sent: ' + msg);
     });
-
-    // establish handshake
-    ws.send(connection + ' connected!');
-    ws.on('disconnect', function(ws) {
-        console.log('ws went bybye', ws);
-    });
+    ws.send('you have connected!');
 });
+
