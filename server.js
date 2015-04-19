@@ -1,6 +1,15 @@
-var http=require('http');
-var fs = require('fs');
-http.createServer(function(req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end('<html><body>Hiya!</body></html');
-}).listen(3000);
+var WebSocketServer = require('ws').Server,
+    wss = new WebSocketServer({ port: 4000 });
+
+wss.on('connection', function(ws) {
+    ws.on('message', function(message) {
+        console.log('message ', message);
+        connection.send('you sent: ' + message);
+    });
+
+    // establish handshake
+    ws.send(connection + ' connected!');
+    ws.on('disconnect', function(ws) {
+        console.log('ws went bybye', ws);
+    });
+});

@@ -77,6 +77,12 @@ module.exports = function (grunt) {
               host: 'localhost',
               port: '3000',
               changeOrigin: false
+            },
+            {
+              context: '/chat',
+              host: 'localhost',
+              port: '4000',
+              changeOrigin: false
             }
           ],
         },
@@ -86,6 +92,11 @@ module.exports = function (grunt) {
          context: '/server',
          host: 'localhost',
          port: '3000'
+      },
+      {
+         context: '/chat',
+         host: 'localhost',
+         port: '4000'
       }],
       livereload: {
         options: {
