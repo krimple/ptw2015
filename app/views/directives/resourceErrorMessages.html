@@ -1,0 +1,8 @@
+<ul>
+	<li ng-repeat="error in errors">
+	{{ error.field }} :
+	<span ng-repeat="item in error.list">
+		{{ item }}
+	</span>
+	</li>
+</ul>

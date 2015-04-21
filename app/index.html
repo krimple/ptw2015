@@ -9,6 +9,7 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="bower_components/angular-material-table/dist/md-table.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -16,23 +17,11 @@
   <!-- endbuild -->
   <!-- do not modify anything above this point -->
 </head>
-<body ng-app>
-<div layout="column">
-  <!-- our code goes here -->
-  <h1>Ready for Angular!</h1>
+<body ng-app="demoApp">
 
-  <p>{{ "Angular " + "is " + "awesome!" }}</p>
-
-  <md-content>
-    <h1>Card example</h1>
-    <md-card>
-      <md-card-content>
-        <h2>Hello!</h2>
-
-        <p>You're such a card</p>
-      </md-card-content>
-    </md-card>
-  </md-content>
+<p><a href="#/">Home</a> | <a href="#/tasks">Tasks</a></p>
+<hr/>
+<div ng-view>
 </div>
 
 <!-- do not modify anything below this point -->
@@ -48,13 +37,14 @@
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
 <script src="bower_components/angular-material/angular-material.js"></script>
+<script src="bower_components/angular-material-table/dist/md-table.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/about.js"></script>
+<script src="scripts/controllers/tasks.js"></script>
+<script src="scripts/directives/resourceErrorMessages.js"></script>
 <!-- endbuild -->
 </body>
 </html>

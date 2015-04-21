@@ -1,0 +1,41 @@
+<md-content>
+
+  <md-card flex>
+    <md-card-content>
+      <form name="taskForm" ng-submit="addTask(task, $event)">
+        <md-input-container>
+          <label>Description</label>
+          <input type="text" ng-model="task.description">
+        </md-input-container>
+        <md-input-container>
+          <label>priority</label>
+          <input type="number" min="1" max="5" ng-model="task.priority">
+        </md-input-container>
+        <md-input-container>
+          <label>Date Due</label>
+          <input type="date" ng-model="task.dueDate">
+        </md-input-container>
+        <button>Save</button>
+      </form>
+    </md-card-content>
+  </md-card>
+  <p>This is the tasks view.</p>
+  <md-button click="loadTasks()">OUCH!</md-button>
+  <table class="md-table" ng-if="tasks && tasks.length > 0">
+    <tr class="md-table-headers-row">
+      <th class="md-table-header">ID</th>
+      <th class="md-table-header">Due Date</th>
+      <th class="md-table-header">Description</th>
+      <th class="md-table-header">complete</th>
+    </tr>
+    <tr class="md-table-content" ng-repeat="task in tasks">
+      <td class="md-table-content">{{ task.id }}</td>
+      <td class="md-table-content">{{ task.dueDate | date:"short" }}</td>
+      <td class="md-table-content">{{ task.description }}</td>
+      <td class="md-table-content">{{ task.complete }}</td>
+    </tr>
+  </table>
+  <span ng-if="!tasks">No tasks yet</span>
+
+</md-content>
+
