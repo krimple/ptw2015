@@ -2,7 +2,7 @@ node_modules
 dist
 .tmp
 .sass-cache
-.swp
+.*.swp
 bower_components
 .idea
 .ipr
